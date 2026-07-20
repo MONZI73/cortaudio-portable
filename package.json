@@ -1,0 +1,32 @@
+{
+  "name": "cortaudio-portable",
+  "version": "1.0.0",
+  "description": "CORTAUDIO Portable para Windows",
+  "main": "main.js",
+  "author": "MONZI73",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "^41.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.antalb.cortaudio",
+    "productName": "CORTAUDIO",
+    "asar": true,
+    "files": ["main.js", "package.json"],
+    "directories": {"output": "release"},
+    "win": {
+      "target": [{"target": "portable", "arch": ["x64"]}],
+      "artifactName": "CORTAUDIO-Portable-${version}.exe"
+    },
+    "portable": {
+      "artifactName": "CORTAUDIO-Portable-${version}.exe",
+      "requestExecutionLevel": "user"
+    }
+  }
+}
